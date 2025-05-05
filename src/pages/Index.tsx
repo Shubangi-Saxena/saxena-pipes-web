@@ -8,6 +8,15 @@ import ContactCta from "@/components/home/ContactCta";
 const Index = () => {
   return (
     <div>
+      <div 
+        className="fixed inset-0 z-[-1] opacity-10"
+        style={{
+          backgroundImage: `url('/lovable-uploads/deb0cd20-fba6-4a91-ba26-338c87ba2998.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
       <Hero />
       <FeaturedProducts />
       <AboutPreview />

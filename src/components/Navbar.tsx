@@ -39,8 +39,16 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex flex-col items-start">
           <h1 className="text-xl font-bold text-primary m-0 p-0">Saxena & Co</h1>
+          <div className="flex items-center mt-1">
+            <img 
+              src="/lovable-uploads/51291b2b-0d0f-4b8f-96ef-2f4f314dba4b.png" 
+              alt="Ashirvad by Aliaxis" 
+              className="h-4 mr-1" 
+            />
+            <span className="text-xs text-muted-foreground">Authorized Distributor</span>
+          </div>
         </Link>
 
         {/* Desktop Menu */}

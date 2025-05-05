@@ -6,11 +6,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-primary text-primary-foreground pt-12 pb-6">
+    <footer className="bg-primary text-primary-foreground pt-12 pb-6 relative">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Saxena & Co</h3>
+            <h3 className="text-xl font-bold mb-2">Saxena & Co</h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/51291b2b-0d0f-4b8f-96ef-2f4f314dba4b.png" 
+                alt="Ashirvad by Aliaxis" 
+                className="h-5 mr-2" 
+              />
+              <span className="text-xs">Authorized Distributor</span>
+            </div>
             <p className="text-sm opacity-80">
               Trusted distributor of pipes and fittings since 1991. Quality, customer satisfaction, 
               and innovation are at the heart of everything we do.
@@ -74,9 +82,18 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-primary-foreground/20 mt-8 pt-6">
-          <p className="text-sm text-center">
-            &copy; {currentYear} Saxena & Co. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <p className="text-sm">
+              &copy; {currentYear} Saxena & Co. All rights reserved.
+            </p>
+            <div className="mt-2 md:mt-0 flex items-center">
+              <img 
+                src="/lovable-uploads/8cf55446-34e0-404c-bff7-8e173307c6e8.png" 
+                alt="Saxena & Co logo" 
+                className="h-8 w-auto filter invert" 
+              />
+            </div>
+          </div>
         </div>
       </div>
     </footer>
