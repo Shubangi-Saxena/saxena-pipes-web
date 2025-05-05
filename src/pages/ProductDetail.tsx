@@ -1,6 +1,6 @@
 
 import { useParams, Link } from "react-router-dom";
-import { Button } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { productsData } from "@/data/products";
 import { useEffect } from "react";
