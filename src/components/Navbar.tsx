@@ -45,7 +45,7 @@ const Navbar = () => {
             alt="Saxena & Co logo" 
             className="h-8 w-auto mr-2 dark:filter dark:invert" 
           />
-          <h1 className="text-xl font-bold text-primary">Saxena & Co</h1>
+          <span className="text-xl font-bold text-primary leading-none">Saxena & Co</span>
         </Link>
 
         {/* Desktop Menu */}
