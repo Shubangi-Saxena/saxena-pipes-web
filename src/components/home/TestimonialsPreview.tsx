@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { testimonialsData } from "@/data/testimonials";
 import {
   Carousel,
@@ -10,8 +9,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import { useCallback } from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 const TestimonialsPreview = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 5000, stopOnInteraction: false })
+  ]);
+
   return (
     <section className="py-16 bg-primary/5">
       <div className="container mx-auto px-4">
@@ -24,10 +30,10 @@ const TestimonialsPreview = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Carousel className="w-full">
-            <CarouselContent>
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
               {testimonialsData.map((testimonial, index) => (
-                <CarouselItem key={index}>
+                <div className="flex-[0_0_100%] min-w-0 pl-4" key={index}>
                   <Card className="border-0 shadow-lg relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 to-primary"></div>
                     <CardContent className="p-8 md:p-10">
@@ -50,14 +56,24 @@ const TestimonialsPreview = () => {
                       </div>
                     </CardContent>
                   </Card>
-                </CarouselItem>
+                </div>
               ))}
-            </CarouselContent>
-            <div className="flex justify-center mt-6 gap-2">
-              <CarouselPrevious className="relative -left-0 top-0 translate-y-0" />
-              <CarouselNext className="relative -right-0 top-0 translate-y-0" />
             </div>
-          </Carousel>
+          </div>
+          <div className="flex justify-center mt-6 gap-2">
+            <div className="flex space-x-2 justify-center pt-4">
+              {testimonialsData.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === 0 ? 'bg-primary' : 'bg-primary/20'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

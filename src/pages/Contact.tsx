@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,7 +32,7 @@ const Contact = () => {
     `;
     
     // Send email using mailto link in a hidden iframe
-    const mailtoLink = `mailto:cosaxena12@gmail.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(emailContent)}`;
+    const mailtoLink = `mailto:saxenaco@yahoo.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(emailContent)}`;
     
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
@@ -100,10 +99,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <a 
-                        href="mailto:cosaxena12@gmail.com" 
+                        href="mailto:saxenaco@yahoo.com" 
                         className="text-primary hover:text-primary/80 transition-colors"
                       >
-                        cosaxena12@gmail.com
+                        saxenaco@yahoo.com
                       </a>
                     </div>
                   </CardContent>

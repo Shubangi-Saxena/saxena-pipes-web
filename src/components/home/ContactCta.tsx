@@ -17,7 +17,7 @@ const ContactCta = () => {
               <Link to="/contact">Contact Us</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover">
-              <a href="tel:9845386626" className="text-primary-foreground dark:text-primary-foreground light:text-primary-foreground">
+              <a href="tel:9845386626" className="text-white dark:text-white light:text-white">
                 Call Now: +91 9845386626
               </a>
             </Button>
