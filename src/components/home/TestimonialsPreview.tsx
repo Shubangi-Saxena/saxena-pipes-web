@@ -1,20 +1,17 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { testimonialsData } from "@/data/testimonials";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const TestimonialsPreview = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonialsData.length);
-  };
-  
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length);
-  };
-  
   return (
     <section className="py-16 bg-primary/5">
       <div className="container mx-auto px-4">
@@ -27,76 +24,40 @@ const TestimonialsPreview = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Card className="border-0 shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 to-primary"></div>
-            <CardContent className="p-8 md:p-10">
-              <div className="text-6xl text-primary/20 font-serif mb-4">"</div>
-              <p className="text-lg md:text-xl mb-6 italic">
-                {testimonialsData[activeIndex].quote}
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
-                  <span className="text-lg font-semibold text-primary">
-                    {testimonialsData[activeIndex].name.charAt(0)}
-                  </span>
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-semibold">{testimonialsData[activeIndex].name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonialsData[activeIndex].position}, {testimonialsData[activeIndex].company}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <div className="flex justify-center mt-6 gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevTestimonial}
-              className="rounded-full"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none" 
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
-              <span className="sr-only">Previous</span>
-            </Button>
-            
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={nextTestimonial}
-              className="rounded-full"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
-              <span className="sr-only">Next</span>
-            </Button>
-          </div>
+          <Carousel className="w-full">
+            <CarouselContent>
+              {testimonialsData.map((testimonial, index) => (
+                <CarouselItem key={index}>
+                  <Card className="border-0 shadow-lg relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/40 to-primary"></div>
+                    <CardContent className="p-8 md:p-10">
+                      <div className="text-6xl text-primary/20 font-serif mb-4">"</div>
+                      <p className="text-lg md:text-xl mb-6 italic">
+                        {testimonial.quote}
+                      </p>
+                      <div className="flex items-center">
+                        <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
+                          <span className="text-lg font-semibold text-primary">
+                            {testimonial.name.charAt(0)}
+                          </span>
+                        </div>
+                        <div className="ml-4">
+                          <h4 className="font-semibold">{testimonial.name}</h4>
+                          <p className="text-sm text-muted-foreground">
+                            {testimonial.position}, {testimonial.company}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-6 gap-2">
+              <CarouselPrevious className="relative -left-0 top-0 translate-y-0" />
+              <CarouselNext className="relative -right-0 top-0 translate-y-0" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>

@@ -25,8 +25,23 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Email submission logic
+    const emailContent = `
+      Name: ${formData.name}
+      Email: ${formData.email}
+      Message: ${formData.message}
+    `;
+    
+    // Send email using mailto link in a hidden iframe
+    const mailtoLink = `mailto:cosaxena12@gmail.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(emailContent)}`;
+    
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    iframe.contentWindow?.location.assign(mailtoLink);
+    
     setTimeout(() => {
+      document.body.removeChild(iframe);
       toast({
         title: "Message sent!",
         description: "Thank you for contacting us. We'll get back to you soon.",
@@ -85,10 +100,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <a 
-                        href="mailto:saxenaco@yahoo.com" 
+                        href="mailto:cosaxena12@gmail.com" 
                         className="text-primary hover:text-primary/80 transition-colors"
                       >
-                        saxenaco@yahoo.com
+                        cosaxena12@gmail.com
                       </a>
                     </div>
                   </CardContent>
@@ -103,8 +118,9 @@ const Contact = () => {
                       <h3 className="font-semibold mb-1">Address</h3>
                       <address className="not-italic text-muted-foreground">
                         Saxena & Co,<br />
-                        Bangalore, Karnataka,<br />
-                        India
+                        132/3 A C Garden 4th Cross, Lalbagh Rd,<br />
+                        near Shantinagar Bus Depot, Sudhama Nagar,<br />
+                        Bengaluru, Karnataka 560027
                       </address>
                     </div>
                   </CardContent>
@@ -182,7 +198,7 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold mb-6">Location</h2>
           <div className="aspect-[16/9] w-full rounded-lg overflow-hidden border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.6309395!3d12.9539974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1651855288519!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3840546387403!2d77.58576037520415!3d12.949842815820312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15d7899a8d6d%3A0xc446e6687900702b!2sSaxena%20%26%20Co!5e0!3m2!1sen!2sin!4v1714277113397!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
