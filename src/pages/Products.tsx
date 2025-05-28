@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,7 +24,7 @@ const Products = () => (
     
     <div className="bg-yellow-100 dark:bg-yellow-900 border border-yellow-300 dark:border-yellow-700 rounded-lg p-6 mb-8">
       <p className="text-lg font-bold text-yellow-800 dark:text-yellow-200 text-center">
-        ⚠️ Please note: Prices may vary and are subject to change. Contact us directly for current pricing and availability.
+        ⚠️ Please note: Prices may vary and are subject to change. <Link to="/contact" className="underline hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors">Contact us directly</Link> for current pricing and availability.
       </p>
     </div>
 
@@ -55,4 +53,3 @@ const Products = () => (
 );
 
 export default Products;
-
