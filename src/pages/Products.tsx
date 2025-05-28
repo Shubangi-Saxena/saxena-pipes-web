@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,16 +7,15 @@ import { Link } from "react-router-dom";
 import { productsData } from "@/data/products";
 
 const productPdfs = [
-  { name: "Anti-Rodent Pipe", file: "anti-rodent pipe.pdf", category: "Specialty Pipes", image: "/ashirvad-pipes.png" },
   { name: "CPVC Plumbing Solutions", file: "cpvc plumbing solutions.pdf", category: "Plumbing", image: "/ashirvad-pipes.png" },
   { name: "Rainwater Harvesting System", file: "rainwater harvesting system.pdf", category: "Rainwater Systems", image: "/ashirvad-pipes.png" },
   { name: "Silent/Silent Plus SWR System", file: "silent:silent plus SWR system.pdf", category: "SWR Systems", image: "/ashirvad-pipes.png" },
   { name: "Solid-Waste and Rainwater System", file: "soli-waster and rainwater system.pdf", category: "Rainwater Systems", image: "/ashirvad-pipes.png" },
   { name: "Underground Drainage", file: "underground drainage.pdf", category: "Drainage", image: "/ashirvad-pipes.png" },
-  { name: "UPVC Casing Pipes for Borewell Protection", file: "upvc casing pipes for borewell protection.pdf", category: "Borewell Protection", image: "/ashirvad-pipes.png" },
-  { name: "UPVC Column Pipes for Submersible Pumps", file: "upvc column pipes for submersible pumps.pdf", category: "Submersible Pumps", image: "/ashirvad-pipes.png" },
   { name: "UPVC Pipes for Agriculture", file: "upvc pipes for agriculture.pdf", category: "Agriculture", image: "/ashirvad-pipes.png" },
   { name: "UPVC Plumbing Solutions", file: "upvc plumbing solutions.pdf", category: "Plumbing", image: "/ashirvad-pipes.png" },
+  { name: "O-PVC Pipes", file: "o-pvc pipes.pdf", category: "Specialty Pipes", image: "/ashirvad-pipes.png" },
+  { name: "FRP Chamber Covers", file: "frp chamber covers.pdf", category: "Accessories", image: "/ashirvad-pipes.png" },
 ];
 
 const categories = [...new Set(productPdfs.map(p => p.category))];
@@ -48,3 +48,4 @@ const Products = () => (
 );
 
 export default Products;
+

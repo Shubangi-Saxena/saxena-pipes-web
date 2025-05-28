@@ -1,19 +1,19 @@
 
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { productsData } from "@/data/products";
 
 const productPdfs = [
-  { name: "Anti-Rodent Pipe", file: "anti-rodent pipe.pdf" },
   { name: "CPVC Plumbing Solutions", file: "cpvc plumbing solutions.pdf" },
   { name: "Rainwater Harvesting System", file: "rainwater harvesting system.pdf" },
   { name: "Silent/Silent Plus SWR System", file: "silent:silent plus SWR system.pdf" },
   { name: "Solid-Waste and Rainwater System", file: "soli-waster and rainwater system.pdf" },
   { name: "Underground Drainage", file: "underground drainage.pdf" },
-  { name: "UPVC Casing Pipes for Borewell Protection", file: "upvc casing pipes for borewell protection.pdf" },
-  { name: "UPVC Column Pipes for Submersible Pumps", file: "upvc column pipes for submersible pumps.pdf" },
   { name: "UPVC Pipes for Agriculture", file: "upvc pipes for agriculture.pdf" },
   { name: "UPVC Plumbing Solutions", file: "upvc plumbing solutions.pdf" },
+  { name: "O-PVC Pipes", file: "o-pvc pipes.pdf" },
+  { name: "FRP Chamber Covers", file: "frp chamber covers.pdf" },
 ];
 
 const FeaturedProducts = () => {
@@ -48,3 +48,4 @@ const FeaturedProducts = () => {
 };
 
 export default FeaturedProducts;
+
