@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +15,7 @@ const productPdfs = [
   { name: "UPVC Plumbing Solutions", file: "upvc plumbing solutions.pdf", category: "Plumbing", image: "/ashirvad-pipes.png" },
   { name: "O-PVC Pipes", file: "o-pvc pipes.pdf", category: "Specialty Pipes", image: "/ashirvad-pipes.png" },
   { name: "FRP Chamber Covers", file: "frp chamber covers.pdf", category: "Chamber Covers", image: "/ashirvad-pipes.png" },
+  { name: "Industrial Pipes", file: "industrial pipes.pdf", category: "Industrial", image: "/ashirvad-pipes.png" },
 ];
 
 const categories = [...new Set(productPdfs.map(p => p.category))];
