@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,14 +28,14 @@ const Products = () => (
         <h2 className="text-2xl font-semibold mb-4">{category}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {productPdfs.filter(p => p.category === category).map(product => (
-            <div key={product.file} className="bg-white rounded-lg shadow p-6 flex flex-col items-start">
+            <div key={product.file} className="bg-card rounded-lg shadow p-6 flex flex-col items-start">
               <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-card-foreground">{product.name}</h3>
               <a
                 href={`/pricelists/${product.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto inline-block bg-primary text-blue px-4 py-2 rounded hover:bg-primary/80 transition"
+                className="mt-auto inline-block bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary/80 transition"
               >
                 View Pricelist (PDF)
               </a>

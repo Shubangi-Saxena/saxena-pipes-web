@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { productsData } from "@/data/products";
@@ -27,13 +28,13 @@ const FeaturedProducts = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {productPdfs.slice(0, 3).map((product) => (
-            <div key={product.file} className="bg-white rounded-lg shadow p-6 flex flex-col items-start">
-              <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+            <div key={product.file} className="bg-card rounded-lg shadow p-6 flex flex-col items-start">
+              <h3 className="text-xl font-semibold mb-2 text-card-foreground">{product.name}</h3>
               <a
                 href={`/pricelists/${product.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto inline-block bg-primary text-white px-3 py-1 rounded hover:bg-primary/80 transition"
+                className="mt-auto inline-block bg-primary text-primary-foreground px-3 py-1 rounded hover:bg-primary/80 transition"
               >
                 View PDF
               </a>
