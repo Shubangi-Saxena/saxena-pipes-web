@@ -1,10 +1,31 @@
-
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
   
+  // Custom handler for testimonials link
+  const handleTestimonialsClick = (e) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const section = document.getElementById("testimonials");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      e.preventDefault();
+      navigate("/#testimonials");
+      setTimeout(() => {
+        const section = document.getElementById("testimonials");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground pt-12 pb-6 relative">
       <div className="container">
@@ -44,7 +65,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/testimonials" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Link to="/#testimonials" onClick={handleTestimonialsClick} className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Testimonials
                 </Link>
               </li>
@@ -72,9 +93,9 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin size={18} className="mt-1" />
+                <MapPin size={36} className="mt-1" />
                 <span className="text-primary-foreground/80">
-                  Bangalore, Karnataka, India
+                  132/3 A C Garden 4th Cross, Lalbagh Rd, near Shantinagar Bus Depot, Sudhama Nagar, Bengaluru, Karnataka 560027
                 </span>
               </li>
             </ul>

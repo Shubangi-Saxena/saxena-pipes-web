@@ -1,122 +1,49 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { productsData } from "@/data/products";
 
-const Products = () => {
-  const [filter, setFilter] = useState("all");
-  
-  const filteredProducts = filter === "all" 
-    ? productsData 
-    : productsData.filter(product => product.category === filter);
-  
-  return (
-    <div>
-      <section className="bg-primary/5 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Products</h1>
-            <p className="text-xl text-muted-foreground">
-              Explore our comprehensive range of high-quality pipes and fittings
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-10 overflow-x-auto">
-            <div className="flex space-x-2 min-w-max p-1">
-              <Button
-                variant={filter === "all" ? "default" : "outline"}
-                onClick={() => setFilter("all")}
-                className="rounded-full"
+const productPdfs = [
+  { name: "Anti-Rodent Pipe", file: "anti-rodent pipe.pdf", category: "Specialty Pipes", image: "/ashirvad-pipes.png" },
+  { name: "CPVC Plumbing Solutions", file: "cpvc plumbing solutions.pdf", category: "Plumbing", image: "/ashirvad-pipes.png" },
+  { name: "Rainwater Harvesting System", file: "rainwater harvesting system.pdf", category: "Rainwater Systems", image: "/ashirvad-pipes.png" },
+  { name: "Silent/Silent Plus SWR System", file: "silent:silent plus SWR system.pdf", category: "SWR Systems", image: "/ashirvad-pipes.png" },
+  { name: "Solid-Waste and Rainwater System", file: "soli-waster and rainwater system.pdf", category: "Rainwater Systems", image: "/ashirvad-pipes.png" },
+  { name: "Underground Drainage", file: "underground drainage.pdf", category: "Drainage", image: "/ashirvad-pipes.png" },
+  { name: "UPVC Casing Pipes for Borewell Protection", file: "upvc casing pipes for borewell protection.pdf", category: "Borewell Protection", image: "/ashirvad-pipes.png" },
+  { name: "UPVC Column Pipes for Submersible Pumps", file: "upvc column pipes for submersible pumps.pdf", category: "Submersible Pumps", image: "/ashirvad-pipes.png" },
+  { name: "UPVC Pipes for Agriculture", file: "upvc pipes for agriculture.pdf", category: "Agriculture", image: "/ashirvad-pipes.png" },
+  { name: "UPVC Plumbing Solutions", file: "upvc plumbing solutions.pdf", category: "Plumbing", image: "/ashirvad-pipes.png" },
+];
+
+const categories = [...new Set(productPdfs.map(p => p.category))];
+
+const Products = () => (
+  <div className="container mx-auto py-12">
+    <h1 className="text-4xl font-bold mb-8">Our Product Range</h1>
+    {categories.map(category => (
+      <div key={category} className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{category}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {productPdfs.filter(p => p.category === category).map(product => (
+            <div key={product.file} className="bg-white rounded-lg shadow p-6 flex flex-col items-start">
+              <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+              <a
+                href={`/pricelists/${product.file}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-block bg-primary text-blue px-4 py-2 rounded hover:bg-primary/80 transition"
               >
-                All Products
-              </Button>
-              <Button
-                variant={filter === "pipes" ? "default" : "outline"}
-                onClick={() => setFilter("pipes")}
-                className="rounded-full"
-              >
-                Pipes
-              </Button>
-              <Button
-                variant={filter === "fittings" ? "default" : "outline"}
-                onClick={() => setFilter("fittings")}
-                className="rounded-full"
-              >
-                Fittings
-              </Button>
-              <Button
-                variant={filter === "drainage" ? "default" : "outline"}
-                onClick={() => setFilter("drainage")}
-                className="rounded-full"
-              >
-                Drainage
-              </Button>
-              <Button
-                variant={filter === "accessories" ? "default" : "outline"}
-                onClick={() => setFilter("accessories")}
-                className="rounded-full"
-              >
-                Accessories
-              </Button>
+                View Pricelist (PDF)
+              </a>
             </div>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
-              <Link to={`/products/${product.slug}`} key={product.id}>
-                <Card className="overflow-hidden h-full card-hover">
-                  <div className="aspect-video bg-muted relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/30" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      {product.icon && (
-                        <div className="w-16 h-16 text-primary opacity-80">
-                          {product.icon}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      {product.shortDescription}
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium bg-secondary px-3 py-1 rounded-full">
-                        {product.category}
-                      </span>
-                      <span className="text-primary text-sm font-medium flex items-center">
-                        View Details
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="ml-1 h-4 w-4"
-                        >
-                          <path d="m9 18 6-6-6-6"/>
-                        </svg>
-                      </span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
+          ))}
         </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    ))}
+  </div>
+);
 
 export default Products;

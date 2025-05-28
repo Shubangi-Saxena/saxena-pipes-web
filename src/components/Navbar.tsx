@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
@@ -9,13 +8,15 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Products", path: "/products" },
-  { name: "Testimonials", path: "/testimonials" },
+  { name: "Testimonials", path: "/#testimonials" },
   { name: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,28 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Custom handler for testimonials link
+  const handleTestimonialsClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      const section = document.getElementById("testimonials");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+      setIsOpen(false);
+    } else {
+      e.preventDefault();
+      navigate("/#testimonials");
+      setTimeout(() => {
+        const section = document.getElementById("testimonials");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      setIsOpen(false);
+    }
+  };
 
   return (
     <header
@@ -50,15 +73,26 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className="font-medium text-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.name === "Testimonials" ? (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={handleTestimonialsClick}
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
+          )}
           <ThemeToggle />
         </nav>
 
@@ -79,16 +113,27 @@ const Navbar = () => {
         {isOpen && (
           <div className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm shadow-md md:hidden animate-fade-in">
             <div className="container py-5 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className="font-medium text-foreground hover:text-primary transition-colors py-2"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.name === "Testimonials" ? (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={handleTestimonialsClick}
+                    className="font-medium text-foreground hover:text-primary transition-colors py-2"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className="font-medium text-foreground hover:text-primary transition-colors py-2"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         )}

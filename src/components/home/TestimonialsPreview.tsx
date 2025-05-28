@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { testimonialsData } from "@/data/testimonials";
@@ -34,7 +33,7 @@ const TestimonialsPreview = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-16 bg-primary/5">
+    <section id="testimonials" className="py-16 bg-primary/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>

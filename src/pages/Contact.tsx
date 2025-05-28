@@ -197,7 +197,7 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold mb-6">Location</h2>
           <div className="aspect-[16/9] w-full rounded-lg overflow-hidden border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3840546387403!2d77.58576037520415!3d12.949842815820312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15d7899a8d6d%3A0xc446e6687900702b!2sSaxena%20%26%20Co!5e0!3m2!1sen!2sin!4v1714277113397!5m2!1sen!2sin"
+              src="https://www.google.com/maps?q=132/3+A+C+Garden+4th+Cross,+Lalbagh+Rd,+near+Shantinagar+Bus+Depot,+Sudhama+Nagar,+Bengaluru,+Karnataka+560027&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
