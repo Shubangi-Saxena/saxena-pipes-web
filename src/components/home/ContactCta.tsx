@@ -17,13 +17,13 @@ const ContactCta = () => {
               <Link to="/contact">Contact Us</Link>
             </Button>
             <div className="flex flex-col sm:flex-row gap-2">
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover">
-                <a href="tel:9008982026" className="text-black dark:text-white hover:text-black dark:hover:text-white">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover text-primary-foreground hover:text-primary-foreground">
+                <a href="tel:9008982026">
                   Call: +91 9008982026
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover">
-                <a href="tel:9845386626" className="text-black dark:text-white hover:text-black dark:hover:text-white">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover text-primary-foreground hover:text-primary-foreground">
+                <a href="tel:9845386626">
                   Call: +91 9845386626
                 </a>
               </Button>
