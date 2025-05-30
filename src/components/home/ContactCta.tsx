@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -16,9 +15,9 @@ const ContactCta = () => {
             <Button asChild size="lg" variant="secondary" className="button-hover">
               <Link to="/contact">Contact Us</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary button-hover">
-              <a href="tel:9008982026">
-                Call: +91 9008982026
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover">
+              <a href="tel:9008982026" className="text-gray-900 dark:text-white hover:text-gray-900 dark:hover:text-white">
+                Call Now: +91 9008982026
               </a>
             </Button>
           </div>
