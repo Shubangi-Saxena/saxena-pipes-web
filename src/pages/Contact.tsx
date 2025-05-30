@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -81,12 +82,20 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <a 
-                        href="tel:9845386626" 
-                        className="text-lg text-primary hover:text-primary/80 transition-colors"
-                      >
-                        +91 9845386626
-                      </a>
+                      <div className="space-y-1">
+                        <a 
+                          href="tel:9008982026" 
+                          className="block text-lg text-primary hover:text-primary/80 transition-colors"
+                        >
+                          +91 9008982026
+                        </a>
+                        <a 
+                          href="tel:9845386626" 
+                          className="block text-lg text-primary hover:text-primary/80 transition-colors"
+                        >
+                          +91 9845386626
+                        </a>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

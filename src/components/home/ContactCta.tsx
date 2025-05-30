@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -15,11 +16,18 @@ const ContactCta = () => {
             <Button asChild size="lg" variant="secondary" className="button-hover">
               <Link to="/contact">Contact Us</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover">
-              <a href="tel:9845386626" className="text-black dark:text-white hover:text-black dark:hover:text-white">
-                Call Now: +91 9845386626
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover">
+                <a href="tel:9008982026" className="text-black dark:text-white hover:text-black dark:hover:text-white">
+                  Call: +91 9008982026
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 hover:bg-primary-foreground/10 button-hover">
+                <a href="tel:9845386626" className="text-black dark:text-white hover:text-black dark:hover:text-white">
+                  Call: +91 9845386626
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
