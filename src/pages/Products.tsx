@@ -7,15 +7,15 @@ import { productsData } from "@/data/products";
 
 const productPdfs = [
   { name: "CPVC Plumbing Solutions", file: "cpvc plumbing solutions.pdf", category: "Plumbing", image: "/ashirvad-pipes.png" },
-  { name: "Rainwater Harvesting System", file: "rainwater harvesting system.pdf", category: "Rainwater Systems", image: "/ashirvad-pipes.png" },
-  { name: "Silent/Silent Plus SWR System", file: "silent:silent plus SWR system.pdf", category: "SWR Systems", image: "/ashirvad-pipes.png" },
-  { name: "Solid-Waste and Rainwater System", file: "soli-waster and rainwater system.pdf", category: "Rainwater Systems", image: "/ashirvad-pipes.png" },
-  { name: "Underground Drainage", file: "underground drainage.pdf", category: "Drainage", image: "/ashirvad-pipes.png" },
-  { name: "UPVC Pipes for Agriculture", file: "upvc pipes for agriculture.pdf", category: "Agriculture", image: "/ashirvad-pipes.png" },
-  { name: "UPVC Plumbing Solutions", file: "upvc plumbing solutions.pdf", category: "Plumbing", image: "/ashirvad-pipes.png" },
-  { name: "O-PVC Pipes", file: "o-pvc pipes.pdf", category: "Specialty Pipes", image: "/ashirvad-pipes.png" },
-  { name: "FRP Chamber Covers", file: "frp chamber covers.pdf", category: "Chamber Covers", image: "/ashirvad-pipes.png" },
-  { name: "Industrial Pipes", file: "industrial pipes.pdf", category: "Industrial", image: "/ashirvad-pipes.png" },
+  { name: "Rainwater Harvesting System", file: "rainwater harvesting system.pdf", category: "Rainwater Systems", image: "/rainwater-harvesting.png" },
+  { name: "Silent/Silent Plus SWR System", file: "silent:silent plus SWR system.pdf", category: "SWR Systems", image: "/silent.png" },
+  { name: "Solid-Waste and Rainwater System", file: "soli-waster and rainwater system.pdf", category: "Rainwater Systems", image: "/silent.png" },
+  { name: "Underground Drainage", file: "underground drainage.pdf", category: "Drainage", image: "/drainage.png" },
+  { name: "UPVC Pipes for Agriculture", file: "upvc pipes for agriculture.pdf", category: "Agriculture", image: "/AGRI.png" },
+  { name: "UPVC Plumbing Solutions", file: "upvc plumbing solutions.pdf", category: "Plumbing", image: "/upvc.png" },
+  { name: "O-PVC Pipes", file: "o-pvc.pdf", category: "Specialty Pipes", image: "/O-PVC.png" },
+  { name: "FRP Chamber Covers", file: "HP-FRP Product Catalogue.pdf", category: "Chamber Covers", image: "/frp.png" },
+  { name: "Industrial Pipes", file: "industrial.pdf", category: "Industrial", image: "/industrial.png" },
 ];
 
 const categories = [...new Set(productPdfs.map(p => p.category))];
@@ -26,7 +26,7 @@ const Products = () => (
     
     <div className="bg-yellow-100 dark:bg-yellow-900 border border-yellow-300 dark:border-yellow-700 rounded-lg p-6 mb-8">
       <p className="text-lg font-bold text-yellow-800 dark:text-yellow-200 text-center">
-        ⚠️ Please note: Prices may vary and are subject to change. <Link to="/contact" className="underline hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors">Contact us directly</Link> for current pricing and availability.
+        ⚠️ Please note: Attached pricelist PDF files are for product reference only. <Link to="/contact" className="underline hover:text-yellow-600 dark:hover:text-yellow-300 transition-colors">Contact us directly</Link> for current pricing and availability.
       </p>
     </div>
 
