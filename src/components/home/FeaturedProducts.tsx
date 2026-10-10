@@ -41,7 +41,7 @@ const FeaturedProducts = () => {
             </div>
           ))}
         </div>
-        <a href="/products" className="block mt-10 text-primary underline text-center text-lg font-medium">See All Products</a>
+        <Link to="/products" className="block mt-10 text-primary underline text-center text-lg font-medium">See All Products</Link>
       </div>
     </section>
   );
