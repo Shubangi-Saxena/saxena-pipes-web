@@ -117,11 +117,11 @@
   }
 
   .pipe-flow path {
-    animation: pipe-flow 2.5s linear infinite;
+    animation: pipe-flow 3.5s linear infinite;
   }
 
   .pipe-flow-slow path {
-    animation: pipe-flow-slow 4s linear infinite;
+    animation: pipe-flow-slow 5.5s linear infinite;
   }
 
   @keyframes pipe-flow {
