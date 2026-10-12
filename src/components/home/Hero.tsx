@@ -1,12 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import PipeBackground from "./PipeBackground";
 
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background min-h-[80vh] flex items-center">
-      <PipeBackground />
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
