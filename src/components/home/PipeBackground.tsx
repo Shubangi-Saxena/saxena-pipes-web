@@ -1,7 +1,7 @@
 // Decorative pipe-network line art. Uses currentColor so it follows the theme.
 const PipeBackground = () => (
   <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden text-primary">
-    <svg className="absolute inset-0 h-full w-full opacity-[0.12] dark:opacity-[0.18]" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 800" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="absolute inset-0 h-full w-full opacity-[0.22] dark:opacity-[0.3]" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 800" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
       <g strokeWidth="14">
         <path d="M-20 160 H380 Q420 160 420 200 V420 Q420 460 460 460 H760" />
         <path d="M1460 120 H1120 Q1080 120 1080 160 V300 Q1080 340 1040 340 H880" />
@@ -26,7 +26,7 @@ const PipeBackground = () => (
         ))}
       </g>
     </svg>
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
   </div>
 );
 
