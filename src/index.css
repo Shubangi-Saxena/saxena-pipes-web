@@ -115,4 +115,24 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
   }
+
+  .pipe-flow path {
+    animation: pipe-flow 2.5s linear infinite;
+  }
+
+  .pipe-flow-slow path {
+    animation: pipe-flow-slow 4s linear infinite;
+  }
+
+  @keyframes pipe-flow {
+    to { stroke-dashoffset: -60; }
+  }
+
+  @keyframes pipe-flow-slow {
+    to { stroke-dashoffset: -36; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pipe-flow path, .pipe-flow-slow path { animation: none; }
+  }
 }
