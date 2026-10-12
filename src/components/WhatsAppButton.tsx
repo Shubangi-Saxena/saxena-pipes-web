@@ -5,8 +5,8 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppButton = () => {
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
-      <div className="mb-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg border">
-        <p className="text-sm text-gray-700 whitespace-nowrap">
+      <div className="mb-1.5 bg-white/90 backdrop-blur-sm rounded-md px-2 py-1 shadow-md border">
+        <p className="text-[11px] leading-tight mb-0 text-gray-700 whitespace-nowrap">
           Click here to chat on WhatsApp
         </p>
       </div>
