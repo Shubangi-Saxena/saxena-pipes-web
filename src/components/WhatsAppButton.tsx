@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 const WhatsAppButton = () => {
   return (
@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
           className="rounded-full w-14 h-14 p-0 bg-green-500 hover:bg-green-600 shadow-lg button-hover"
           aria-label="Chat on WhatsApp"
         >
-          <MessageCircle className="w-7 h-7" />
+          <WhatsAppIcon className="w-7 h-7 text-white" />
         </Button>
       </a>
     </div>
