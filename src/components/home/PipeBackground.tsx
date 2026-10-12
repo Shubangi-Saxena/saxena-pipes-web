@@ -30,27 +30,27 @@ const PipeBackground = () => (
       strokeLinejoin="round"
     >
       {/* Pipe walls */}
-      <g strokeWidth="16" className="opacity-30 dark:opacity-40">
+      <g strokeWidth="16" className="opacity-15 dark:opacity-20">
         {mainPipes.map((d, i) => <path key={i} d={d} />)}
       </g>
-      <g strokeWidth="5" className="opacity-25 dark:opacity-35">
+      <g strokeWidth="5" className="opacity-10 dark:opacity-15">
         {thinPipes.map((d, i) => <path key={i} d={d} />)}
       </g>
 
       {/* Flowing water */}
-      <g strokeWidth="5" className="pipe-flow opacity-60" style={{ stroke: "hsl(var(--background))" }}>
+      <g strokeWidth="5" className="pipe-flow opacity-40" style={{ stroke: "hsl(var(--background))" }}>
         {mainPipes.map((d, i) => (
           <path key={i} d={d} strokeDasharray="14 46" style={{ animationDelay: `${i * -0.7}s` }} />
         ))}
       </g>
-      <g strokeWidth="2" className="pipe-flow-slow opacity-50" stroke="currentColor">
+      <g strokeWidth="2" className="pipe-flow-slow opacity-30" stroke="currentColor">
         {thinPipes.map((d, i) => (
           <path key={i} d={d} strokeDasharray="6 30" style={{ animationDelay: `${i * -1.1}s` }} />
         ))}
       </g>
 
       {/* Joints */}
-      <g strokeWidth="6" fill="hsl(var(--background))" className="opacity-45 dark:opacity-55">
+      <g strokeWidth="6" fill="hsl(var(--background))" className="opacity-20 dark:opacity-25">
         {joints.map(([x, y], i) => (
           <rect key={i} x={x - 15} y={y - 15} width="30" height="30" rx="7" />
         ))}
