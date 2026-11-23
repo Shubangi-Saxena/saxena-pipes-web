@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-b from-primary/5 to-background min-h-[80vh] flex items-center">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary/5 to-background min-h-[80vh] flex items-center">
+      <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
             Trusted Distributor of Pipes & Fittings Since 1991
           </h1>
+          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground mb-6 animate-fade-in" style={{animationDelay: "0.05s"}}>
+            Wholesale & Retail Pipes & Fittings · Ashirvad Dealer
+          </p>
           <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{animationDelay: "0.1s"}}>
             Saxena & Co is the 3rd largest distributor in Bangalore and among the top 10 nationwide. 
             We provide high-quality piping solutions for residential, commercial, and institutional projects.
